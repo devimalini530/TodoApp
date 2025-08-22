@@ -38,7 +38,7 @@ function TodoApp() {
   const formatted = data.todos.map(item => ({ id: item.id, text: item.todo }));
   setApiTodos(formatted);
   setShowApiTodos(true);
-};
+ };
   const goBack = () => {
     setApiTodos([]);
     setShowApiTodos(false);

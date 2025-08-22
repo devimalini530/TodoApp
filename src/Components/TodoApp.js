@@ -33,14 +33,12 @@ function TodoApp() {
     setEditText("");
   };
   const fetchTodos = async () => {
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/todos?_limit=5"
-    );
-    const data = await response.json();
-    const formatted = data.map((item) => ({ id: item.id, text: item.title }));
-    setApiTodos(formatted);
-    setShowApiTodos(true);
-  };
+  const response = await fetch("https://dummyjson.com/todos?limit=5");
+  const data = await response.json();
+  const formatted = data.todos.map(item => ({ id: item.id, text: item.todo }));
+  setApiTodos(formatted);
+  setShowApiTodos(true);
+};
   const goBack = () => {
     setApiTodos([]);
     setShowApiTodos(false);
